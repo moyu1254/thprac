@@ -54,6 +54,14 @@ thprac.exe C:\Users\Name\Desktop\Games\Touhou\th17\th17.exe
 thprac.exe --without-vpatch C:\Users\Name\Desktop\Games\Touhou\th17\th17.exe
 ```
 
+### Discordへのプレイ状況表示
+
+[Discord beta.1 テスト版をダウンロード](https://github.com/moyu1254/thprac/releases/tag/v2.3.1.1-discord-beta.1)。ZIPを展開し、`thprac.exe`・`thprac32.dll`・`thprac64.dll`はファイル名を変えず、同じフォルダーに置いてください。
+
+このブランチでは [TouhouStatus](https://github.com/moyu1254/TouhouStatus) の機能をthpracに組み込んでいます。Discordデスクトップ版を起動してアクティビティ共有を有効にすると、thpracの適用時からプレイ状況を表示します。TouhouStatusを別途起動する必要はありません。共有を止める場合は、ランチャーの設定またはゲーム内F12オプションの「Discordにプレイ状況を表示」をオフにしてください。初期設定はオンです。
+
+対象はthpracが適用処理を持つ全23作品で、獣王園と紅魔郷 New Classicの対応バージョンも含みます。作品名・自機名・装備名は、既存の定義がある場合はthpracのものを使います。状態変化はDiscordの更新制限内で送信し、スコアなどの頻繁な変化はまとめて更新します。[作品別の表示内容・制限・テスト手順](docs/discord-presence.md)も参照してください。全作品の実機動作とDiscordクライアント上の表示は未検証です。
+
 ## <a name="compatability"></a> **互換性**
 thprac は **Windows Vista** 以降の全てのバージョンの Windows に公式にサポートしています。Windows XP であっても [One-Core-API](https://github.com/Skulltrail192/One-Core-API-Binaries) を使うことで動作する可能性はありますが、これは**公式に動作確認されているわけではありません。**
 

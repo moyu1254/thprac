@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_late.h"
 #include "thprac_utils.h"
 #include <metrohash128.h>
 
@@ -4418,5 +4419,8 @@ namespace TH18 {
 
 void TH18InitReal()
 {
+    DiscordPresence::Initialize("th18", [] {
+        return DiscordPresence::CaptureLate(18, false, TH18::thPracParam.mode);
+    });
     EnableAllHooks(TH18::THInitHook);
 }

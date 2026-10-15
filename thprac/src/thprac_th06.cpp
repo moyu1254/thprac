@@ -1,3 +1,4 @@
+#include "thprac_presence_early.h"
 #include "thprac_th06.h"
 
 namespace TH06 {
@@ -2397,6 +2398,7 @@ namespace TH06 {
         if (ImGui::GetCurrentContext()) {
             return;
         }
+        DiscordPresence::Initialize("th06", [] { return DiscordPresence::Capture06(thPracParam.mode != 0); });
 
         // Init
         GameGuiInit(IMPL_WIN32_DX8, (int)(&SUPERVISOR->d3dDevice), (int)(&(GAME_WINDOW->window)),

@@ -5,6 +5,7 @@
 #include "thprac_identify.h"
 #include "thprac_inject.h"
 #include "thprac_log.h"
+#include "thprac_discord.h"
 
 extern "C" IMAGE_DOS_HEADER __ImageBase;
 
@@ -13,6 +14,9 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, [[maybe_unused]] LPVOID
         wchar_t mod_fn[MAX_PATH + 1] = {};
         auto cch = GetModuleFileNameW(hinstDLL, mod_fn, MAX_PATH);
         InitPaths({ mod_fn, cch });
+    }
+    else if (fdwReason == DLL_PROCESS_DETACH) {
+        DiscordPresence::RequestStop();
     }
     return TRUE;
 }

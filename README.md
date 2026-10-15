@@ -57,6 +57,14 @@ thprac.exe C:\Users\Name\Desktop\Games\Touhou\th17\th17.exe
 thprac.exe --without-vpatch C:\Users\Name\Desktop\Games\Touhou\th12\th12.exe
 ```
 
+### Discord Rich Presence
+
+[Download the Discord beta.1 test build](https://github.com/moyu1254/thprac/releases/tag/v2.3.1.1-discord-beta.1). Extract the ZIP and keep `thprac.exe`, `thprac32.dll` and `thprac64.dll` together with those filenames.
+
+This branch integrates [TouhouStatus](https://github.com/moyu1254/TouhouStatus) into thprac. With Discord desktop running and activity sharing enabled, applying thprac starts reporting the supported game's play status. No separate TouhouStatus process is required. Turn **Show play status on Discord** off in launcher settings or the in-game F12 options to stop sharing; it is enabled by default.
+
+Adapters cover all 23 titles with an injection entry point in thprac, including the supported TH19 and TH06 New Classic versions. Titles, characters and equipment reuse thprac's definitions where available. State changes are sent within Discord's update limits; score and timer refreshes are coalesced. See [coverage, limitations and offline tests](docs/discord-presence.md). These adapters have not yet been verified in every real game or in the visible Discord client.
+
 ## <a name="compatability"></a> **Compatability**
 thprac officially supports every version of Windows starting with **Windows Vista**. Windows XP may work using [One-Core-API](https://github.com/Skulltrail192/One-Core-API-Binaries), but this is **NOT** being actively tested.
 

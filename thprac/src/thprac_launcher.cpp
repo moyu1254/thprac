@@ -276,7 +276,7 @@ static void LauncherSettingsMain(LauncherState* state) {
     ImGui::NewLine();
     ImGui::TextUnformatted(S(TH_ABOUT_THPRAC));
     ImGui::Separator();
-    ImGui::Text(S(TH_ABOUT_VERSION), VER_PARAMS_CUR);
+    Gui::VersionText();
     if (ImGui::Button(S(TH_VISIT_WEBSITE))) {
         ShellExecuteW(ImGui_ImplWin32_GetHwnd(), L"open", L"https://github.com/touhouworldcup/thprac", nullptr, nullptr, SW_SHOW);
     }

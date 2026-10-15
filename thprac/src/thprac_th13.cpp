@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_late.h"
 #include "thprac_utils.h"
 
 
@@ -1838,5 +1839,8 @@ namespace TH13 {
 
 void TH13InitReal()
 {
+    DiscordPresence::Initialize("th13", [] {
+        return DiscordPresence::CaptureLate(13, false, TH13::thPracParam.mode);
+    });
     EnableAllHooks(TH13::THInitHook);
 }

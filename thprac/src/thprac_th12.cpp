@@ -1,3 +1,4 @@
+#include "thprac_presence_early.h"
 #include "thprac_games.h"
 #include "thprac_utils.h"
 
@@ -1815,6 +1816,7 @@ namespace TH12 {
         if (ImGui::GetCurrentContext()) {
             return;
         }
+        DiscordPresence::Initialize("th12", [] { return DiscordPresence::Capture12(); });
         // Init
         GameGuiInit(IMPL_WIN32_DX9, 0x4ce8f0, 0x4cf3f0,
             Gui::INGAGME_INPUT_GEN2, 0x4d48c4, 0x4d48c0, 0,

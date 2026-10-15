@@ -663,7 +663,11 @@ inline bool CheckPopups(int id, Args... rest)
 }
 
 inline void VersionText() {
-    return ImGui::Text(S(TH_ABOUT_VERSION), VER_PARAMS_CUR);
+    ImGui::Text(S(TH_ABOUT_VERSION), VER_PARAMS_CUR);
+    if (THPRAC_VERSION_SUFFIX[0]) {
+        ImGui::SameLine(0.0f, 0.0f);
+        ImGui::TextUnformatted(THPRAC_VERSION_SUFFIX);
+    }
 }
 
 void ComboSelect(size_t& out, th_glossary_t* choices, const size_t choices_count, const char* label);

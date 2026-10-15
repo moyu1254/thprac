@@ -35,6 +35,7 @@ struct ThpracVersion {
 #define THPRAC_VERSION_1 3
 #define THPRAC_VERSION_2 1
 #define THPRAC_VERSION_3 1
+#define THPRAC_VERSION_SUFFIX "-discord-beta.1"
 extern const ThpracVersion gVersion;
 #define VER_PARAMS(v) (v).meta, (v).major, (v).minor, (v).patch
 #define VER_PARAMS_CUR VER_PARAMS(gVersion)

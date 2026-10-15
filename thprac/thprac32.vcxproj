@@ -32,6 +32,10 @@
     <ClCompile Include="lib\MetroHash\metrohash128.cpp" />
     <ClCompile Include="lib\yyjson\yyjson.c" />
     <ClCompile Include="src\thprac_cfg.cpp" />
+    <ClCompile Include="src\thprac_discord.cpp"><ExceptionHandling>Sync</ExceptionHandling></ClCompile>
+    <ClCompile Include="src\thprac_presence_early.cpp"><ExceptionHandling>Sync</ExceptionHandling></ClCompile>
+    <ClCompile Include="src\thprac_discord_late.cpp"><ExceptionHandling>Sync</ExceptionHandling></ClCompile>
+    <ClCompile Include="src\thprac_discord_scenes.cpp"><ExceptionHandling>Sync</ExceptionHandling></ClCompile>
     <ClCompile Include="src\thprac_games.cpp" />
     <ClCompile Include="src\thprac_gui_components.cpp" />
     <ClCompile Include="src\thprac_gui_input.cpp" />
@@ -82,6 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\thprac_cfg.h" />
+    <ClInclude Include="src\thprac_discord.h" />
+    <ClInclude Include="src\thprac_presence_early.h" />
+    <ClInclude Include="src\thprac_discord_late.h" />
+    <ClInclude Include="src\thprac_discord_scenes.h" />
     <ClInclude Include="src\thprac_games.h" />
     <ClInclude Include="src\thprac_hook.h" />
     <ClInclude Include="src\thprac_pe.h" />

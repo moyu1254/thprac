@@ -74,6 +74,7 @@ struct THPracSettings {
     bool render_only_used_glyphs = false;
     bool resizable_window = false;
     bool console = false;
+    bool discord_presence = true;
 };
 
 struct HotkeyChords {

@@ -1,3 +1,4 @@
+#include "thprac_presence_early.h"
 #include "thprac_th07.h"
 
 namespace TH07 {
@@ -2039,6 +2040,7 @@ namespace TH07 {
         if (ImGui::GetCurrentContext()) {
             return;
         }
+        DiscordPresence::Initialize("th07", [] { return DiscordPresence::Capture07(); });
         // Init
         GameGuiInit(IMPL_WIN32_DX8, (int)&SUPERVISOR->d3d_device, (int)&GAME_WINDOW->window,
             Gui::INGAGME_INPUT_GEN1, INPUT_ADDR, LAST_FRAME_INPUT_ADDR, IS_EIGHTH_FRAME_OF_INPUT_ADDR,

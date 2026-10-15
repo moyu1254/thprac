@@ -31,6 +31,7 @@
     <ClCompile Include="lib\MetroHash\metrohash128.cpp" />
     <ClCompile Include="lib\yyjson\yyjson.c" />
     <ClCompile Include="src\thprac_cfg.cpp" />
+    <ClCompile Include="src\thprac_discord.cpp"><ExceptionHandling>Sync</ExceptionHandling></ClCompile>
     <ClCompile Include="src\thprac_games.cpp" />
     <ClCompile Include="src\thprac_gui_components.cpp" />
     <ClCompile Include="src\thprac_gui_input.cpp" />
@@ -49,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\thprac_cfg.h" />
+    <ClInclude Include="src\thprac_discord.h" />
+    <ClInclude Include="src\thprac_presence_nc.h" />
     <ClInclude Include="src\thprac_games.h" />
     <ClInclude Include="src\thprac_hook.h" />
     <ClInclude Include="src\thprac_inject.h" />

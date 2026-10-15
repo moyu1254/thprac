@@ -4,6 +4,7 @@
 #include "thprac_licence.h"
 #include "thprac_utils.h"
 #include "thprac_pe.h"
+#include "thprac_discord.h"
 
 #include <imgui_impl_win32.h>
 #include <imgui_impl_dx8.h>
@@ -359,6 +360,7 @@ int GameGuiProgress = 0;
 
 void GameGuiBegin(game_gui_impl impl, bool game_nav)
 {
+    DiscordPresence::Tick(gSettings.discord_presence);
     // Acquire game input
     ImGuiIO& io = ImGui::GetIO();
     if (game_nav) {
@@ -711,6 +713,10 @@ bool GameplayOpt(adv_opt_ctx& ctx)
 
 void AboutOpt(const char* thanks_text)
 {
+    if (ImGui::Checkbox(S(THPRAC_DISCORD_PRESENCE), &gSettings.discord_presence)) {
+        DiscordPresence::Tick(gSettings.discord_presence);
+        SaveSettings();
+    }
     static bool showLicense = false;
     if (BeginOptGroup<TH_ABOUT_THPRAC>()) {
         Gui::VersionText();

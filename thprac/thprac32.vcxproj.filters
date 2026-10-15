@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="src\thprac_discord.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="src\thprac_presence_early.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="src\thprac_discord_late.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="src\thprac_discord_scenes.cpp"><Filter>Common</Filter></ClCompile>
+    <ClInclude Include="src\thprac_discord.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\thprac_presence_early.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\thprac_discord_late.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\thprac_discord_scenes.h"><Filter>Common</Filter></ClInclude>
     <ClCompile Include="lib\ImGui\backends\imgui_impl_dx8.cpp">
       <Filter>Libraries</Filter>
     </ClCompile>

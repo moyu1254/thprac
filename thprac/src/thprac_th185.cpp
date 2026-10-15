@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_late.h"
 #include "thprac_utils.h"
 #include <queue>
 #include <string>
@@ -711,6 +712,7 @@ namespace TH185 {
 
 void TH185InitReal()
 {
+    DiscordPresence::Initialize("th185", [] { return DiscordPresence::CaptureLate(185, false, TH185::thPracParam.mode); });
     EnableAllHooks(TH185::THInitHook);
 }
 

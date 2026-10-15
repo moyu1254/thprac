@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - codex/discord-rich-presence
 
 jobs:
   build:
@@ -18,6 +19,8 @@ jobs:
       run: .\loc_json_build_msvc.bat
     - name: Build thprac
       run: msbuild thprac.sln -t:restore,build -p:RestorePackagesConfig=true,Configuration=Release
+    - name: Test Discord presence (offline IPC and game-state fixtures)
+      run: ./tests/run-discord-tests.ps1
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:

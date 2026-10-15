@@ -2,6 +2,7 @@
 
 #include "thprac_utils.h"
 #include "thprac_th19.h"
+#include "thprac_discord_late.h"
 
 namespace TH19 {
 namespace V1_00a {
@@ -884,6 +885,7 @@ namespace V1_00a {
 
 void TH19_v1_00a_InitReal()
 {
+    DiscordPresence::Initialize("th19", [] { return DiscordPresence::CaptureLate(19, false); });
     ingame_image_base = CurrentImageBase;
     EnableAllHooks(TH19::V1_00a::THInitHook);
 }

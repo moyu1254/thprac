@@ -1,3 +1,4 @@
+#include "thprac_presence_early.h"
 #include "thprac_games.h"
 #include "thprac_utils.h"
 
@@ -601,6 +602,7 @@ namespace TH09 {
         if (ImGui::GetCurrentContext()) {
             return;
         }
+        DiscordPresence::Initialize("th09", [] { return DiscordPresence::Capture09(); });
         GameGuiInit(IMPL_WIN32_DX8, 0x4b3108, 0x4b30b0,
             Gui::INGAGME_INPUT_GEN2, 0x4acf3a, 0x4acf38, 0,
             1.0f);

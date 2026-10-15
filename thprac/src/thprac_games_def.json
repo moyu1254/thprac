@@ -101,6 +101,8 @@
       ],
 
       "THPRAC_GLOBAL_SETTINGS": [ "全局设置", "Global settings", "グローバル設定" ],
+      "THPRAC_DISCORD_PRESENCE": [ "在 Discord 显示游玩状态", "Show play status on Discord", "Discordにプレイ状況を表示" ],
+      "THPRAC_DISCORD_PRESENCE_DESC": [ "应用 thprac 后自动显示。需要运行 Discord 桌面客户端并启用活动分享。", "Starts when thprac is applied. Requires Discord desktop with activity sharing enabled.", "thprac適用時に開始します。Discordデスクトップ版の起動とアクティビティ共有の有効化が必要です。" ],
       "THPRAC_LAUNCH_BEHAVIOR": [ "启动行为", "Launch behavior", "起動時の設定" ],
       "THPRAC_LAUNCH_BEHAVIOR_NOTICE": [
         "这些设置都需要重新启动启动器后才会生效。",

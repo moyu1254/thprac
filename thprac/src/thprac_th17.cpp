@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_late.h"
 #include "thprac_utils.h"
 #include <numbers>
 
@@ -2690,5 +2691,8 @@ namespace TH17 {
 
 void TH17InitReal()
 {
+    DiscordPresence::Initialize("th17", [] {
+        return DiscordPresence::CaptureLate(17, false, TH17::thPracParam.mode);
+    });
     EnableAllHooks(TH17::THInitHook);
 }

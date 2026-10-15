@@ -1,6 +1,7 @@
 #include "wininternal.h"
 
 #include "thprac_games.h"
+#include "thprac_discord_late.h"
 #include "thprac_utils.h"
 #include <format>
 #include <math.h>
@@ -3380,6 +3381,9 @@ namespace TH20 {
 
 void TH20InitReal()
 {
+    DiscordPresence::Initialize("th20", [] {
+        return DiscordPresence::CaptureLate(20, false, TH20::thPracParam.mode);
+    });
     ingame_image_base = CurrentImageBase;
     EnableAllHooks(TH20::THInitHook);
 }

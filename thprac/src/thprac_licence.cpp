@@ -30,6 +30,12 @@ namespace Gui {
                 ImGui::EndChild();
                 ImGui::EndTabItem();
             }
+            if (ImGui::BeginTabItem("TouhouStatus")) {
+                ImGui::BeginChild("COPYING.TouhouStatus");
+                ImGui::TextUnformatted(COPYING_TouhouStatus);
+                ImGui::EndChild();
+                ImGui::EndTabItem();
+            }
             if (ImGui::BeginTabItem("thprac")) {
                 ImGui::BeginChild("COPYING.thprac");
                 ImGui::TextUnformatted(COPYING_thprac);

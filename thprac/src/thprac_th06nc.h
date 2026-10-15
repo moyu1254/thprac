@@ -404,7 +404,9 @@ namespace TH06NC {
         int64_t __unkScore;                // 0x940
         int64_t highScore;                 // 0x948
         uint8_t pauseState;                // 0x950
-        char __unknown_951[0x3];           // 0x951
+        uint8_t retryState;                // 0x951
+        uint8_t __unknown_952;             // 0x952
+        uint8_t isClear;                   // 0x953
         int8_t inPracticeMode;             // 0x954
         int8_t inSpellPrac;                // 0x955
         int8_t spellPracEndFlag;           // 0x956
@@ -444,6 +446,8 @@ namespace TH06NC {
     static_assert(offsetof(GameManager, actualScore) == 0x938);
     static_assert(offsetof(GameManager, highScore) == 0x948);
     static_assert(offsetof(GameManager, pauseState) == 0x950);
+    static_assert(offsetof(GameManager, retryState) == 0x951);
+    static_assert(offsetof(GameManager, isClear) == 0x953);
     static_assert(offsetof(GameManager, inPracticeMode) == 0x954);
     static_assert(offsetof(GameManager, inSpellPrac) == 0x955);
     static_assert(offsetof(GameManager, spellPracEndFlag) == 0x956);
@@ -543,7 +547,8 @@ namespace TH06NC {
     };
 
     struct Supervisor {
-        char __unknown1[0x42c];   // 0x0
+        char __unknown1[0x428];   // 0x0
+        SupervisorState wantedState; // 0x428
         SupervisorState curState; // 0x42c
         char __unknown2[0x1b];    // 0x430
         uint8_t curMode;          // 0x44b
@@ -586,6 +591,7 @@ namespace TH06NC {
     static_assert(offsetof(ZUNGui, isBossPresent) == 0x44);
     static_assert(offsetof(ZUNGui, bossTimerSec) == 0x4c);
     static_assert(offsetof(Supervisor, curState) == 0x42c);
+    static_assert(offsetof(Supervisor, wantedState) == 0x428);
     static_assert(offsetof(Supervisor, curMode) == 0x44b);
     static_assert(offsetof(AsciiManager, curColor) == 0x52cc);
     static_assert(offsetof(AsciiManager, pauseMenu) == 0x52d0);

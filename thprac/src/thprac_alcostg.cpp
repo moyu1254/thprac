@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_late.h"
 #include "thprac_utils.h"
 
 
@@ -1154,5 +1155,6 @@ namespace Alcostg {
 
 void AlcostgInitReal()
 {
+    DiscordPresence::Initialize("alcostg", [] { return DiscordPresence::CaptureLate(0, false, Alcostg::thPracParam.mode); });
     EnableAllHooks(Alcostg::THInitHook);
 }

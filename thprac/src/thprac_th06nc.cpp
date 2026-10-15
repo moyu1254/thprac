@@ -1,4 +1,5 @@
 #include "thprac_th06nc.h"
+#include "thprac_presence_nc.h"
 #include "imgui_internal.h"
 #include "wininternal.h"
 
@@ -2810,6 +2811,13 @@ namespace TH06NC {
     HOOKSET_ENDDEF()
 
 
+    static DiscordPresence::Snapshot CapturePresence()
+    {
+        return DiscordPresence::CaptureNewClassic(*GAME_MANAGER, *SUPERVISOR,
+            S(TH06NC_TITLE), S(GAME_MANAGER->character ? TH_TRACKER_MARISA : TH_TRACKER_REIMU),
+            *reinterpret_cast<uint32_t*>(SPELLCARD_IS_ACTIVE) != 0, *reinterpret_cast<uint32_t*>(SPELLCARD_ID), *BOSS_PTR != nullptr);
+    }
+
     static __declspec(noinline) void THGuiCreate() {
         if (ImGui::GetCurrentContext()) return;
 
@@ -2826,6 +2834,8 @@ namespace TH06NC {
         MAIN_MENU = (MainMenu*)MAIN_MENU_ADDR;
         SUPERVISOR = (Supervisor*)SUPERVISOR_ADDR;
         SAVE_REPLAY_MENU_PTR = (SaveReplayMenu**)SAVE_REPLAY_MENU_PTR_ADDR;
+
+        DiscordPresence::Initialize("th06nc", CapturePresence);
 
         // Init
         GameGuiInit(IMPL_WIN32_DX11, D3D_DEVICE_PTR, HWND_PTR,

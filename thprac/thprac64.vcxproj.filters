@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="src\thprac_discord.cpp"><Filter>Common</Filter></ClCompile>
+    <ClInclude Include="src\thprac_discord.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="src\thprac_presence_nc.h"><Filter>Common</Filter></ClInclude>
     <ClCompile Include="src\thprac_cfg.cpp">
       <Filter>Common</Filter>
     </ClCompile>

@@ -325,6 +325,10 @@ bool LoadSettings() {
             yyjson_eval_numeric(val, &gSettings.console);
             continue;
         }
+        if (unsafe_yyjson_equals_str(key, "discord_presence")) {
+            if (yyjson_is_bool(val)) gSettings.discord_presence = yyjson_get_bool(val);
+            continue;
+        }
         if (unsafe_yyjson_equals_str(key, "existing_game_launch_action")) {
             yyjson_eval_numeric(val, (unsigned int*)&gSettings.existing_game_launch_action);
             continue;
@@ -391,6 +395,7 @@ static const char settingsTemplate[] =
     "\t" R"("render_only_used_glyphs": %s,)" "\n"
     "\t" R"("resizable_window": %s,)" "\n"
     "\t" R"("console": %s,)" "\n"
+    "\t" R"("discord_presence": %s,)" "\n"
     "\t" R"("update_without_confirmation": %s,)" "\n"
     "\t" R"("dont_search_ongoing_game": %s,)" "\n"
     "\t" R"("thprac_admin_rights": %s,)" "\n"
@@ -421,6 +426,7 @@ bool SaveSettings() {
         gSettings.render_only_used_glyphs ? "true" : "false",
         gSettings.resizable_window ? "true" : "false",
         gSettings.console ? "true" : "false",
+        gSettings.discord_presence ? "true" : "false",
         gSettings.update_without_confirmation ? "true" : "false",
         gSettings.dont_search_ongoing_game ? "true" : "false",
         gSettings.thprac_admin_rights ? "true" : "false"
@@ -451,6 +457,8 @@ void GuiSettings() {
     ImGui::SameLine();
     Gui::HelpMarker(S(THPRAC_RENDER_ONLY_USED_GLYPHS_DESC));
     ImGui::Checkbox(S(THPRAC_RESIZABLE_WINDOW), &gSettings.resizable_window);
+    ImGui::Checkbox(S(THPRAC_DISCORD_PRESENCE), &gSettings.discord_presence);
+    ImGui::TextWrapped("%s", S(THPRAC_DISCORD_PRESENCE_DESC));
 
     if (ImGui::Checkbox(S(THPRAC_CONSOLE), &gSettings.console) && gSettings.console && !console_open) { 
         if (!AttachConsole(GetCurrentProcessId()) && !AttachConsole(ATTACH_PARENT_PROCESS)) {

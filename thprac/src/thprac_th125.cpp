@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_scenes.h"
 #include "thprac_utils.h"
 
 
@@ -299,5 +300,6 @@ namespace TH125 {
 
 void TH125InitReal()
 {
+    DiscordPresence::Initialize("th125", [] { return DiscordPresence::Capture125(); });
     EnableAllHooks(TH125::THInitHook);
 }

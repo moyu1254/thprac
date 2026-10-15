@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include "thprac_games.h"
+#include "thprac_discord_scenes.h"
 #include "thprac_utils.h"
 
 namespace TH095 {
@@ -523,6 +524,7 @@ namespace TH095 {
 
 void TH095InitReal()
 {
+    DiscordPresence::Initialize("th095", [] { return DiscordPresence::Capture095(); });
     EnableAllHooks(TH095::THInitHook);
     DisableAllHooks(TH095::PhotoScoreDisplayFix);
     // TH095::th095_photo_score_display_fix_toggle_on.Setup();

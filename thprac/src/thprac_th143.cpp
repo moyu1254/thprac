@@ -1,4 +1,5 @@
 #include "thprac_games.h"
+#include "thprac_discord_scenes.h"
 #include "thprac_utils.h"
 
 
@@ -265,5 +266,6 @@ namespace TH143 {
 
 void TH143InitReal()
 {
+    DiscordPresence::Initialize("th143", [] { return DiscordPresence::Capture143(); });
     EnableAllHooks(TH143::THInitHook);
 }
